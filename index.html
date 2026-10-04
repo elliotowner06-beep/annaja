@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b141a" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="light dark">
+  <meta name="format-detection" content="telephone=no">
+  <title>WhatsApp</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="screen" data-state="connecting">
+
+    <section class="brand">
+      <img class="logo" src="assets/icon.svg" alt="" width="84" height="84">
+      <h1 class="title">WhatsApp</h1>
+    </section>
+
+    <section class="status">
+      <!-- State: connecting -->
+      <div class="when-connecting" role="status" aria-live="polite">
+        <div class="progress" aria-hidden="true"><span></span></div>
+        <p class="status-text" data-i18n="connecting">Connecting...</p>
+        <a class="link-btn slow-hint" id="openSlow" href="https://web.whatsapp.com/" hidden data-i18n="openDirect">Open directly</a>
+      </div>
+
+      <!-- State: error -->
+      <div class="when-error" role="alert">
+        <h2 class="error-title" id="errorTitle"></h2>
+        <p class="error-text" id="errorText"></p>
+        <button class="btn" id="retryBtn" type="button" data-i18n="retry">Try again</button>
+        <a class="link-btn" id="openDirect" href="https://web.whatsapp.com/" data-i18n="openDirect">Open directly</a>
+      </div>
+    </section>
+
+  </main>
+
+  <noscript>
+    <div class="noscript">
+      <p>JavaScript is required.</p>
+      <a class="btn" href="https://web.whatsapp.com/">Open WhatsApp Web</a>
+    </div>
+  </noscript>
+
+  <script src="script.js"></script>
+</body>
+</html>
